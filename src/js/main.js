@@ -85,7 +85,7 @@ export function initFormsValidation() {
           confirmButtonColor: "#10b981",
         }).then(() => {
           form.reset();
-          window.location.href = "index.html";
+          window.location.href = "/thank-you.html";
         });
       }
     });
