@@ -177,13 +177,13 @@ function initNavbarScroll() {
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
-      nav.classList.replace("nav-transparent", "nav-scrolled");
-      nav.classList.remove("py-4");
-      nav.classList.add("py-2");
+      // On passe en mode sombre (fond blanc)
+      nav.classList.remove("nav-transparent");
+      nav.classList.add("nav-scrolled");
     } else {
-      nav.classList.replace("nav-scrolled", "nav-transparent");
-      nav.classList.remove("py-2");
-      nav.classList.add("py-4");
+      // On repasse en mode clair (fond transparent)
+      nav.classList.remove("nav-scrolled");
+      nav.classList.add("nav-transparent");
     }
   });
 }
