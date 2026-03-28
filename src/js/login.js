@@ -1,32 +1,29 @@
-import { supabase } from "./supabase.js";
+import { supabase } from './supabase.js';
 
-const form = document.getElementById("login-form");
+const form = document.getElementById('login-form');
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+    // Loader visuel
+    const btn = form.querySelector('button');
+    btn.disabled = true;
+    btn.innerText = 'Connexion...';
 
-  Swal.fire({
-    title: "Authenticating...",
-    allowOutsideClick: false,
-    didOpen: () => Swal.showLoading(),
-  });
-
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email: email,
-    password: password,
-  });
-
-  if (error) {
-    Swal.fire({
-      icon: "error",
-      title: "Access Denied",
-      text: "Invalid credentials.",
+    const { data, error } = await supabase.auth.signInWithPassword({
+        email: email,
+        password: password,
     });
-  } else {
-    // Redirection vers le dashboard admin après connexion réussie
-    window.location.href = "/admin.html";
-  }
+
+    if (error) {
+        alert('Erreur: ' + error.message);
+        btn.disabled = false;
+        btn.innerText = 'Sign In';
+    } else {
+        // Succès : Redirection vers admin
+        window.location.href = '/admin.html';
+    }
 });
