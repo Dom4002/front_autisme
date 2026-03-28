@@ -1,116 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard | Love & Fire</title>
+    <title>Our Programs | Love & Fire Adaptive Sports</title>
     
-    <!-- Bibliothèques Pro -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="/src/css/style.css">
 </head>
-<body class="bg-slate-50 min-h-screen font-sans">
+<body class="bg-brand-light text-slate-800 flex flex-col min-h-screen">
 
-    <!-- LOADER DE PAGE (Caché par JS après chargement) -->
-    <div id="page-loader" class="fixed inset-0 bg-white z-[9999] flex flex-col items-center justify-center transition-opacity duration-500">
-        <div class="w-16 h-16 border-4 border-slate-100 border-t-brand-trust rounded-full animate-spin"></div>
-        <p class="mt-4 font-display font-bold text-slate-400 uppercase tracking-widest text-xs animate-pulse">Chargement Sécurisé...</p>
-    </div>
+    <!-- HEADER: Correction du chevauchement -->
+    <header id="main-nav" class="fixed w-full z-50 transition-all duration-300 nav-transparent py-4">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center gap-4">
+                
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2 shrink-0 group">
+                    <div class="text-3xl flex items-center">
+                        <i class="fa-solid fa-heart text-brand-love drop-shadow-md"></i>
+                        <span class="text-white/50 mx-0.5 text-xl">&</span>
+                        <i class="fa-solid fa-fire text-brand-fire drop-shadow-md"></i>
+                    </div>
+                    <span class="logo-text font-display font-extrabold text-2xl tracking-tight text-white transition-colors hidden sm:inline">
+                        Love & Fire
+                    </span>
+                </a>
 
-    <!-- NAVBAR ADMIN PRO -->
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-heart text-brand-love text-xl"></i>
-                    <span class="font-display font-bold text-slate-900 text-lg">Admin Center</span>
-                </div>
-                <div class="flex items-center gap-4">
-                    <span id="admin-email" class="hidden sm:block text-xs text-slate-500 font-medium bg-slate-100 px-3 py-1 rounded-full"></span>
-                    <button id="logout-btn" class="flex items-center gap-2 text-sm bg-red-50 text-brand-love hover:bg-brand-love hover:text-white px-4 py-2 rounded-xl font-bold transition-all">
-                        <i class="fa-solid fa-right-from-bracket"></i> Logout
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+                <!-- Navigation Desktop -->
+                <nav class="hidden lg:flex space-x-8 items-center">
+                    <a href="index.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors text-sm uppercase tracking-wide">Home</a>
+                    <a href="about.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors text-sm uppercase tracking-wide">Our Story</a>
+                    <a href="programs.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors text-sm uppercase tracking-wide">Programs</a>
+                    <a href="parents.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors text-sm uppercase tracking-wide">Parents FAQ</a>
+                </nav>
 
-    <main class="max-w-7xl mx-auto p-4 sm:p-8">
-        <!-- HEADER DE SECTION -->
-        <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
-            <div>
-                <h2 class="text-3xl font-display font-extrabold text-slate-900">Inscriptions Reçues</h2>
-                <p class="text-slate-500 text-sm mt-1">Gérez les demandes et contactez les parents.</p>
-            </div>
-            <div class="bg-white px-6 py-4 rounded-2xl shadow-sm border border-slate-200 flex items-center gap-4">
-                <div class="w-10 h-10 bg-blue-50 text-brand-trust rounded-full flex items-center justify-center text-xl">
-                    <i class="fa-solid fa-user-graduate"></i>
-                </div>
-                <div>
-                    <p class="text-xs text-slate-400 font-bold uppercase">Total</p>
-                    <p id="total-count" class="text-xl font-black text-slate-900">--</p>
+                <!-- Action Button -->
+                <div class="flex items-center gap-4 border-l border-white/20 pl-6 shrink-0">
+                    <a href="enroll.html" class="bg-brand-fire text-white px-5 py-2.5 rounded-xl font-bold hover:scale-105 transition-all shadow-lg text-sm uppercase tracking-wider">
+                        Enroll Now
+                    </a>
+                    <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl"><i class="fa-solid fa-bars"></i></button>
                 </div>
             </div>
         </div>
+    </header>
 
-        <!-- TABLEAU DES DONNÉES -->
-        <div class="bg-white rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
-            <div class="overflow-x-auto">
-                <table class="w-full text-left text-sm">
-                    <thead class="bg-slate-50/50 text-xs uppercase text-slate-400 font-bold tracking-widest border-b border-slate-100">
-                        <tr>
-                            <th class="p-6">Parent</th>
-                            <th class="p-6">Enfant</th>
-                            <th class="p-6">Programme</th>
-                            <th class="p-6">Date</th>
-                            <th class="p-4 text-center">Statut</th>
-                            <th class="p-6 text-right">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="enrollment-list" class="divide-y divide-slate-100 text-slate-600">
-                        <!-- SKELETONS PAR DÉFAUT -->
-                        <tr class="animate-pulse">
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-24 mb-2"></div><div class="h-3 bg-slate-50 rounded w-32"></div></td>
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-20"></div></td>
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-28"></div></td>
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-16"></div></td>
-                            <td class="p-4"><div class="h-6 bg-slate-100 rounded-full w-20 mx-auto"></div></td>
-                            <td class="p-6"><div class="h-8 bg-slate-100 rounded-lg w-full ml-auto"></div></td>
-                        </tr>
-                        <!-- Répète le skeleton 3 fois -->
-                        <tr class="animate-pulse">
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-24 mb-2"></div><div class="h-3 bg-slate-50 rounded w-32"></div></td>
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-20"></div></td>
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-28"></div></td>
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-16"></div></td>
-                            <td class="p-4"><div class="h-6 bg-slate-100 rounded-full w-20 mx-auto"></div></td>
-                            <td class="p-6"><div class="h-8 bg-slate-100 rounded-lg w-full ml-auto"></div></td>
-                        </tr>
-
-                        <tr class="animate-pulse">
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-24 mb-2"></div><div class="h-3 bg-slate-50 rounded w-32"></div></td>
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-20"></div></td>
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-28"></div></td>
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-16"></div></td>
-                            <td class="p-4"><div class="h-6 bg-slate-100 rounded-full w-20 mx-auto"></div></td>
-                            <td class="p-6"><div class="h-8 bg-slate-100 rounded-lg w-full ml-auto"></div></td>
-                        </tr>
-
-                        <tr class="animate-pulse">
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-24 mb-2"></div><div class="h-3 bg-slate-50 rounded w-32"></div></td>
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-20"></div></td>
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-28"></div></td>
-                            <td class="p-6"><div class="h-4 bg-slate-100 rounded w-16"></div></td>
-                            <td class="p-4"><div class="h-6 bg-slate-100 rounded-full w-20 mx-auto"></div></td>
-                            <td class="p-6"><div class="h-8 bg-slate-100 rounded-lg w-full ml-auto"></div></td>
-                        </tr>
-                    </tbody>
-                </table>
+    <main class="flex-grow">
+        
+        <!-- 1. HERO SECTION: Animation fluide synchronisée -->
+        <section class="relative h-[65vh] min-h-[500px] w-full overflow-hidden bg-slate-900 flex items-center justify-center text-center">
+            <!-- Background with darker overlay for readability -->
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-900/90 z-10"></div>
+                <div class="bg-slide absolute inset-0 bg-cover bg-center transition-all duration-1000 opacity-100" 
+                     style="background-image: url('https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=2000&auto=format&fit=crop');"></div>
             </div>
-        </div>
+            
+            <div class="relative z-20 px-4 max-w-4xl mx-auto mt-12">
+                <div class="inline-flex items-center gap-2 bg-brand-trust/20 backdrop-blur-md border border-brand-trust/30 text-brand-trust text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-[0.2em] mb-8">
+                    Spring Session 2026
+                </div>
+                <h1 class="text-5xl md:text-8xl font-display font-extrabold text-white leading-[1.1] mb-8 drop-shadow-2xl">
+                    Fueling Their <br>
+                    <span class="inline-block min-w-[200px] relative">
+                        <span id="dynamic-word" class="text-brand-fire fade-text fade-in">Passion</span>
+                        <span class="absolute bottom-0 left-0 w-full h-1.5 bg-brand-love rounded-full"></span>
+                    </span>.
+                </h1>
+                <p class="text-lg md:text-xl text-slate-200 font-medium max-w-2xl mx-auto leading-relaxed opacity-90">
+                    Adaptive programs designed to celebrate neurodiversity through movement, creativity, and community.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. PROGRAM GRID: Design Moderne & Pro -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                
+                <div class="text-center mb-20">
+                    <span class="text-brand-trust font-black tracking-[0.3em] uppercase text-xs mb-3 block">Our Offerings</span>
+                    <h3 class="text-4xl md:text-5xl font-display font-bold text-slate-900">Explore Our Specialized Curriculum</h3>
+                    <div class="h-1.5 w-20 bg-brand-fire mx-auto mt-6 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    
+                    <!-- Program 1: Soccer -->
+                    <div class="group bg-slate-50 rounded-[3rem] p-10 border border-slate-100 hover:border-brand-fire/20 hover:shadow-[0_20px_50px_rgba(234,88,12,0.1)] transition-all duration-500 flex flex-col">
+                        <div class="w-16 h-16 bg-orange-100 text-brand-fire rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-12 transition-transform">
+                            <i class="fa-solid fa-futbol"></i>
+                        </div>
+                        <h4 class="text-2xl font-display font-bold text-slate-900 mb-4">Adaptive Soccer</h4>
+                        <p class="text-slate-500 mb-8 leading-relaxed">Focusing on motor skills, coordination and basic rules in a supportive, low-pressure field.</p>
+                        <div class="mt-auto pt-8 border-t border-slate-200 flex justify-between items-center">
+                            <span class="text-2xl font-black text-slate-900">$180 <span class="text-xs text-slate-400 font-medium italic">/ session</span></span>
+                            <a href="enroll.html?program=soccer_group" class="w-12 h-12 flex items-center justify-center bg-slate-900 text-white rounded-full hover:bg-brand-fire transition-colors">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Program 2: Basketball -->
+                    <div class="group bg-slate-50 rounded-[3rem] p-10 border border-slate-100 hover:border-brand-trust/20 hover:shadow-[0_20px_50px_rgba(2,132,199,0.1)] transition-all duration-500 flex flex-col">
+                        <div class="w-16 h-16 bg-blue-100 text-brand-trust rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-12 transition-transform">
+                            <i class="fa-solid fa-basketball"></i>
+                        </div>
+                        <h4 class="text-2xl font-display font-bold text-slate-900 mb-4">Inclusive Basketball</h4>
+                        <p class="text-slate-500 mb-8 leading-relaxed">Structured dribbling and shooting drills without loud whistles or stressful competition.</p>
+                        <div class="mt-auto pt-8 border-t border-slate-200 flex justify-between items-center">
+                            <span class="text-2xl font-black text-slate-900">$180 <span class="text-xs text-slate-400 font-medium italic">/ session</span></span>
+                            <a href="enroll.html?program=basketball_group" class="w-12 h-12 flex items-center justify-center bg-slate-900 text-white rounded-full hover:bg-brand-trust transition-colors">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Program 3: Art & Music -->
+                    <div class="group bg-slate-900 rounded-[3rem] p-10 hover:shadow-2xl transition-all duration-500 flex flex-col text-white">
+                        <div class="w-16 h-16 bg-brand-love text-white rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-12 transition-transform">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <h4 class="text-2xl font-display font-bold mb-4">Adaptive Art & Music</h4>
+                        <p class="text-slate-400 mb-8 leading-relaxed">A sanctuary for creative expression and sensory exploration through sound and color.</p>
+                        <div class="mt-auto pt-8 border-t border-white/10 flex justify-between items-center">
+                            <span class="text-lg font-bold italic opacity-80">Inquire for pricing</span>
+                            <a href="enroll.html?program=art_music" class="w-12 h-12 flex items-center justify-center bg-white text-slate-900 rounded-full hover:bg-brand-love hover:text-white transition-all">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <script type="module" src="/src/js/admin.js"></script>
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+             <div class="flex items-center justify-center gap-2 mb-6">
+                <i class="fa-solid fa-heart text-brand-love"></i>
+                <span class="font-display font-bold text-slate-900">Love & Fire</span>
+            </div>
+            <p class="text-slate-400 text-xs uppercase tracking-widest font-bold">© 2026 Love & Fire Adaptive Sports. Montgomery County, MD.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/js/main.js"></script>
 </body>
 </html>
