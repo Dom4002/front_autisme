@@ -11,10 +11,11 @@
 <body class="bg-brand-light text-slate-800 flex flex-col min-h-screen">
 
     <!-- HEADER PRO (Correction du chevauchement) -->
-    <header id="main-nav" class="fixed w-full z-50 transition-all duration-300 nav-transparent py-4">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center gap-4">
-                
+  <!-- HEADER: Transparent au top, Blanc au scroll (Mise à jour Pro) -->
+<header id="main-nav" class="fixed w-full z-50 transition-all duration-300 nav-transparent py-4 border-b border-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+            
         <!-- LOGO AVEC IMAGE RÉELLE -->
         <a href="index.html" class="flex items-center gap-3 group">
             <!-- Image du Logo -->
@@ -36,18 +37,42 @@
             <a href="parents.html" class="nav-link font-bold hover:text-brand-fire transition-colors">Parents FAQ</a>
         </nav>
 
-                <!-- Actions : shrink-0 et border discret -->
-                <div class="flex items-center gap-4 border-l border-white/20 pl-6 shrink-0">
-                    <a href="enroll.html" class="hidden sm:inline-block bg-brand-fire text-white px-6 py-2.5 rounded-xl font-bold hover:scale-105 transition-all shadow-lg text-xs uppercase tracking-widest">
-                        Enroll Now
-                    </a>
-                    <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl p-2 focus:outline-none">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
+            <!-- 3. ACTIONS DESKTOP (Boutons à droite) -->
+            <div class="hidden md:flex items-center gap-4 border-l border-white/20 pl-6 actions-desktop">
+                <a href="donate.html" class="text-white hover:text-brand-love font-bold text-sm transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-hand-holding-heart text-brand-love"></i> Donate
+                </a>
+                <a href="enroll.html" class="bg-brand-fire text-white px-6 py-2.5 rounded-xl font-bold hover:bg-orange-600 transition-all shadow-lg hover:scale-105 transform">
+                    Enroll Child
+                </a>
+            </div>
+
+            <!-- 4. BOUTON MENU MOBILE (Hamburger) -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl p-2 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- 5. MENU MOBILE (Caché par défaut) -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white absolute w-full top-full left-0 shadow-2xl border-t border-slate-100">
+        <div class="px-6 py-8 space-y-4 flex flex-col">
+            <a href="index.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Home</a>
+            <a href="about.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Our Story</a>
+            <a href="programs.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Programs</a>
+            <a href="parents.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Parents FAQ</a>
+            
+            <div class="pt-4 space-y-4">
+                <a href="donate.html" class="flex items-center justify-center gap-2 p-4 bg-red-50 text-brand-love font-bold rounded-xl border border-red-100">
+                    <i class="fa-solid fa-hand-holding-heart"></i> Support Our Mission
+                </a>
+                <a href="enroll.html" class="flex items-center justify-center p-4 bg-brand-trust text-white font-bold rounded-xl shadow-lg">
+                    Enroll Your Child
+                </a>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
     <main class="flex-grow">
         
