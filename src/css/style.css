@@ -80,3 +80,43 @@
 .nav-link:hover {
     @apply text-brand-fire !important;
 }
+
+
+/* --- GESTION COULEURS NAVBAR --- */
+
+/* 1. Quand la barre est en haut (Transparente) */
+.nav-transparent .nav-link, 
+.nav-transparent .logo-text {
+    color: white !important;
+}
+
+/* Force le bouton menu mobile en blanc au top */
+.nav-transparent #mobile-menu-btn {
+    color: white !important;
+}
+
+/* Optionnel : Si ton logo image est trop sombre pour le fond noir, on l'éclaircit */
+.nav-transparent img {
+    filter: brightness(0) invert(1);
+}
+
+/* 2. Quand on scrolle (Barre Blanche) */
+.nav-scrolled .nav-link, 
+.nav-scrolled .logo-text {
+    color: #1e293b !important; /* slate-800 */
+}
+
+/* Bouton menu mobile en noir quand on scrolle */
+.nav-scrolled #mobile-menu-btn {
+    color: #1e293b !important;
+}
+
+/* On remet le logo en couleurs normales au scroll */
+.nav-scrolled img {
+    filter: none;
+}
+
+/* 3. État au survol (Hover) - Toujours la couleur Fire */
+.nav-link:hover {
+    color: var(--color-brand-fire) !important;
+}
