@@ -1,7 +1,10 @@
+ /* 1. DIRECTIVES TAILWIND 4 */
 @import "tailwindcss";
 
+/* 2. IMPORTS DES POLICES */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700;800&display=swap');
 
+/* 3. THÈME ET VARIABLES */
 @theme {
   --color-brand-love: #e11d48;
   --color-brand-fire: #ea580c;
@@ -12,6 +15,7 @@
   --font-display: "Quicksand", sans-serif;
 }
 
+/* 4. COUCHE DE BASE */
 @layer base {
   body {
     @apply font-sans antialiased text-slate-800 bg-brand-light;
@@ -20,19 +24,57 @@
   h1, h2, h3, h4, h5, .font-display {
     @apply font-display;
   }
+  
+  /* Scrollbar personnalisée */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { @apply bg-slate-100; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-300 rounded-full border-2 border-transparent bg-clip-content; }
 }
 
-/* Animations et composants */
+/* 5. LOGIQUE DE LA NAVBAR (Correction du bug !important) */
+
+/* État : En haut de page (Transparent) */
+.nav-transparent .nav-link, 
+.nav-transparent .logo-text,
+.nav-transparent #mobile-menu-btn {
+    color: white !important; /* Utilisation de CSS pur pour éviter l'erreur de build */
+}
+
+.nav-transparent img {
+    filter: brightness(0) invert(1);
+}
+
+/* État : Au scroll (Fond blanc) */
+.nav-scrolled {
+    @apply bg-white/95 backdrop-blur-md shadow-lg py-2 border-b border-slate-100;
+}
+
+.nav-scrolled .nav-link, 
+.nav-scrolled .logo-text,
+.nav-scrolled #mobile-menu-btn {
+    color: #1e293b !important; /* slate-800 */
+}
+
+.nav-scrolled img {
+    filter: none;
+}
+
+/* Hover sur les liens */
+.nav-link:hover {
+    color: var(--color-brand-fire) !important;
+}
+
+/* 6. ANIMATIONS ET COMPOSANTS */
+
+.gradient-text {
+  background: linear-gradient(to right, var(--color-brand-love), var(--color-brand-fire));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .fade-text { @apply transition-all duration-500 inline-block; }
 .fade-out { @apply opacity-0 -translate-y-2; }
 .fade-in { @apply opacity-100 translate-y-0; }
-
-.nav-scrolled {
-  @apply bg-white/95 backdrop-blur-md shadow-lg py-2 border-b border-slate-100;
-}
-.nav-transparent {
-  @apply bg-transparent py-4 border-transparent;
-}
 
 .whatsapp-float {
   @apply fixed bottom-8 right-8 w-14 h-14 bg-[#25d366] text-white rounded-full 
@@ -47,76 +89,13 @@
   100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-
-
-
-
-
-/* État initial : Transparent (Au top de la page) */
-.nav-transparent .nav-link, 
-.nav-transparent .logo-text {
-    @apply text-white;
+.blob-shape {
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  animation: morph 8s ease-in-out infinite;
 }
 
-.nav-transparent #mobile-menu-btn {
-    @apply text-white;
-}
-
-/* État scrollé : Fond blanc, texte sombre */
-.nav-scrolled {
-    @apply bg-white/95 backdrop-blur-md shadow-lg py-2 border-b border-slate-100;
-}
-
-.nav-scrolled .nav-link, 
-.nav-scrolled .logo-text {
-    @apply text-slate-800; /* Ici on force la couleur sombre */
-}
-
-.nav-scrolled #mobile-menu-btn {
-    @apply text-slate-800;
-}
-
-/* Le lien actif ou au survol reste coloré */
-.nav-link:hover {
-    @apply text-brand-fire !important;
-}
-
-
-/* --- GESTION COULEURS NAVBAR --- */
-
-/* 1. Quand la barre est en haut (Transparente) */
-.nav-transparent .nav-link, 
-.nav-transparent .logo-text {
-    color: white !important;
-}
-
-/* Force le bouton menu mobile en blanc au top */
-.nav-transparent #mobile-menu-btn {
-    color: white !important;
-}
-
-/* Optionnel : Si ton logo image est trop sombre pour le fond noir, on l'éclaircit */
-.nav-transparent img {
-    filter: brightness(0) invert(1);
-}
-
-/* 2. Quand on scrolle (Barre Blanche) */
-.nav-scrolled .nav-link, 
-.nav-scrolled .logo-text {
-    color: #1e293b !important; /* slate-800 */
-}
-
-/* Bouton menu mobile en noir quand on scrolle */
-.nav-scrolled #mobile-menu-btn {
-    color: #1e293b !important;
-}
-
-/* On remet le logo en couleurs normales au scroll */
-.nav-scrolled img {
-    filter: none;
-}
-
-/* 3. État au survol (Hover) - Toujours la couleur Fire */
-.nav-link:hover {
-    color: var(--color-brand-fire) !important;
+@keyframes morph {
+  0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+  67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
 }
