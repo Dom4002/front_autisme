@@ -13,7 +13,8 @@ export default defineConfig({
         enroll: './enroll.html',
         donate: './donate.html',
         admin: './admin.html',
-        login: './login.html'
+        login: './login.html',
+        thankyou: './thank-you.html'
       }
     }
   }
