@@ -1,13 +1,5 @@
 import { supabase } from "./supabase.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  initMobileMenu();
-  initHeroSlider();
-  initDynamicText();
-  initNavbarScroll();
-  initFormsValidation();
-  initFAQ();
-});
 
 // 1. Menu Mobile
 function initMobileMenu() {
@@ -168,3 +160,34 @@ function initFAQ() {
     });
   });
 }
+
+
+
+// 1. Ajoute cette fonction à la fin de ton fichier main.js
+function preSelectProgram() {
+  // On récupère les paramètres de l'URL (?program=...)
+  const urlParams = new URLSearchParams(window.location.search);
+  const selectedProgram = urlParams.get('program');
+
+  if (selectedProgram) {
+    // On cherche le bouton radio qui a cette valeur
+    const radioButton = document.querySelector(`input[name="program"][value="${selectedProgram}"]`);
+    
+    if (radioButton) {
+      radioButton.checked = true;
+      // Optionnel : On peut scroller doucement jusqu'à la sélection pour montrer que c'est fait
+      radioButton.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+}
+
+// 2. N'oublie pas de l'appeler dans ton écouteur principal tout en haut du fichier :
+document.addEventListener("DOMContentLoaded", () => {
+  initMobileMenu();
+  initHeroSlider();
+  initDynamicText();
+  initNavbarScroll();
+  initFormsValidation();
+  initFAQ();
+  preSelectProgram(); 
+});
