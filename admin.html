@@ -17,19 +17,20 @@
     <main class="p-8">
         <h2 class="text-2xl font-bold mb-6">Inscriptions Reçues</h2>
         
-        <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
-            <table class="w-full text-left">
-                <thead class="bg-slate-50 text-xs uppercase text-slate-500 font-bold">
+        <div class="bg-white rounded-2xl shadow-sm overflow-x-auto">
+            <table class="w-full text-left text-sm">
+                <thead class="bg-slate-50 text-xs uppercase text-slate-500 font-semibold tracking-wider">
                     <tr>
-                        <th class="p-6">Parent</th>
-                        <th class="p-6">Enfant</th>
-                        <th class="p-6">Programme</th>
-                        <th class="p-6">Date</th>
-                        <th class="p-6">Statut</th>
+                        <th class="p-4">Parent</th>
+                        <th class="p-4">Enfant</th>
+                        <th class="p-4">Programme</th>
+                        <th class="p-4">Date</th>
+                        <th class="p-4 text-center">Statut</th>
+                        <th class="p-4 text-right">Actions</th>
                     </tr>
                 </thead>
                 <tbody id="enrollment-list" class="divide-y divide-slate-100">
-                    <!-- Les données viendront ici via JavaScript -->
+                    <!-- Les données de Supabase viendront ici -->
                 </tbody>
             </table>
         </div>
