@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Love & Fire Adaptive Sports</title>
+    
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="/src/css/style.css">
+ 
+</head>
+<body class="bg-white text-slate-800 flex flex-col min-h-screen">
+
+    <!-- HEADER / NAVBAR (Transparent au top) -->
+<!-- HEADER: Transparent au top, Blanc au scroll (Mise à jour Pro) -->
+<header id="main-nav" class="fixed w-full z-50 transition-all duration-300 nav-transparent py-4 border-b border-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+            
+            <!-- 1. LOGO -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="text-3xl">
+                    <i class="fa-solid fa-heart text-brand-love drop-shadow-md"></i>
+                    <span class="text-white/50 mx-0.5 text-xl logo-sep">&</span>
+                    <i class="fa-solid fa-fire text-brand-fire drop-shadow-md"></i>
+                </div>
+                <span class="logo-text font-display font-extrabold text-2xl tracking-tight text-white transition-colors">
+                    Love <span class="hidden sm:inline">& Fire</span>
+                </span>
+            </a>
+
+            <!-- 2. NAVIGATION DESKTOP (Liens au centre) -->
+            <nav class="hidden lg:flex space-x-8 items-center">
+                <a href="index.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors">Home</a>
+                <a href="about.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors">Our Story</a>
+                <a href="programs.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors">Programs</a>
+                <a href="parents.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors">Parents FAQ</a>
+            </nav>
+
+            <!-- 3. ACTIONS DESKTOP (Boutons à droite) -->
+            <div class="hidden md:flex items-center gap-4 border-l border-white/20 pl-6 actions-desktop">
+                <a href="donate.html" class="text-white hover:text-brand-love font-bold text-sm transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-hand-holding-heart text-brand-love"></i> Donate
+                </a>
+                <a href="enroll.html" class="bg-brand-fire text-white px-6 py-2.5 rounded-xl font-bold hover:bg-orange-600 transition-all shadow-lg hover:scale-105 transform">
+                    Enroll Child
+                </a>
+            </div>
+
+            <!-- 4. BOUTON MENU MOBILE (Hamburger) -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl p-2 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- 5. MENU MOBILE (Caché par défaut) -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white absolute w-full top-full left-0 shadow-2xl border-t border-slate-100">
+        <div class="px-6 py-8 space-y-4 flex flex-col">
+            <a href="index.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Home</a>
+            <a href="about.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Our Story</a>
+            <a href="programs.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Programs</a>
+            <a href="parents.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Parents FAQ</a>
+            
+            <div class="pt-4 space-y-4">
+                <a href="donate.html" class="flex items-center justify-center gap-2 p-4 bg-red-50 text-brand-love font-bold rounded-xl border border-red-100">
+                    <i class="fa-solid fa-hand-holding-heart"></i> Support Our Mission
+                </a>
+                <a href="enroll.html" class="flex items-center justify-center p-4 bg-brand-trust text-white font-bold rounded-xl shadow-lg">
+                    Enroll Your Child
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main class="flex-grow">
+        
+        <!-- 1. DYNAMIC HERO SLIDER (STORY EDITION) -->
+        <section class="relative h-[60vh] min-h-[500px] w-full overflow-hidden bg-slate-900 flex items-center justify-center">
+            <!-- Background Slides (Images de la fondatrice, Maryland, et enfants) -->
+            <div class="bg-slide absolute inset-0 bg-cover bg-center transition-all duration-1000 opacity-100 scale-100" 
+                 style="background-image: url('https://images.unsplash.com/photo-1543269664-56d93c1b41a6?q=80&w=2000&auto=format&fit=crop');"></div>
+            <div class="bg-slide absolute inset-0 bg-cover bg-center transition-all duration-1000 opacity-0 scale-105" 
+                 style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop');"></div>
+            <div class="bg-slide absolute inset-0 bg-cover bg-center transition-all duration-1000 opacity-0 scale-105" 
+                 style="background-image: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2000&auto=format&fit=crop');"></div>
+            
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-slate-900/60"></div>
+
+            <!-- Animated Content -->
+            <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
+                    Our Story & Values
+                </div>
+                <h1 class="text-5xl md:text-7xl font-display font-extrabold text-white leading-tight mb-6 drop-shadow-xl">
+                    Driven by a <br><span id="dynamic-word" class="text-brand-fire fade-text fade-in border-b-4 border-white">Mission</span>.
+                </h1>
+                <p class="text-xl text-slate-200 font-medium max-w-2xl mx-auto drop-shadow-md">
+                    Love & Fire Adaptive Sports was born from a mother's dream to create a place where every child belongs.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. FOUNDER'S STORY (EDITORIAL LAYOUT) -->
+        <section class="py-24 bg-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                    
+                    <!-- Magazine Image Style -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="absolute -top-10 -left-10 w-32 h-32 bg-brand-light rounded-full -z-10"></div>
+                        <div class="relative bg-slate-100 p-4 rounded-[3.5rem] shadow-2xl border border-slate-100 transform -rotate-2">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
+                                 alt="The Founder" class="rounded-[3rem] w-full h-auto object-cover aspect-[4/5]">
+                            
+                            <!-- Quote Badge -->
+                            <div class="absolute -bottom-6 -right-6 bg-brand-trust text-white p-6 rounded-2xl shadow-xl max-w-[220px] border-4 border-white">
+                                <i class="fa-solid fa-quote-left text-2xl text-blue-300 mb-2"></i>
+                                <p class="text-xs font-bold leading-relaxed italic">"I refused to let my child believe they didn't belong in the game."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Story Text -->
+                    <div class="lg:col-span-7">
+                        <span class="text-brand-love font-bold uppercase tracking-widest text-sm mb-4 block">Founded by a mother's dream</span>
+                        <h2 class="text-4xl md:text-5xl font-display font-extrabold text-slate-900 mb-10 leading-tight">The Heart Behind <br>Love & Fire</h2>
+                        
+                        <div class="prose prose-lg text-slate-600 space-y-6">
+                            <p class="text-xl font-medium text-slate-800 italic">"As a mother of a child with autism, I experienced firsthand the struggle of finding inclusive sports programs that truly understood my child."</p>
+                            <p>Regular leagues were often too loud, too fast, and too overwhelming. On the other hand, specialized adaptive programs were incredibly scarce, with long waitlists and limited options. I saw my child sitting on the sidelines, wanting to play, but not having a safe space to do so.</p>
+                            <p>I created <strong>Love & Fire Adaptive Sports</strong> because I wanted to build more than just a sports league—I wanted to build a community. A place where we celebrate small victories, focus on pure joy, and adapt our coaching to meet each child where they are.</p>
+                        </div>
+
+                        <div class="mt-12 pt-8 border-t border-slate-100 flex items-center gap-5">
+                            <div class="w-14 h-14 bg-slate-900 text-white rounded-full flex items-center justify-center font-display font-bold text-xl">JF</div>
+                            <div>
+                                <h4 class="font-display font-bold text-slate-900 text-lg">Jane Founder</h4>
+                                <p class="text-sm text-brand-trust font-bold uppercase tracking-wider">Executive Director & Mother</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CORE VALUES SECTION -->
+        <section class="py-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-brand-fire font-bold tracking-widest uppercase text-sm mb-4">The Pillars of Our Community</h2>
+                <h3 class="text-3xl md:text-5xl font-display font-bold text-slate-900 mb-16">What We Stand For</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Value 1 -->
+                    <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300">
+                        <div class="w-16 h-16 mx-auto bg-red-50 text-brand-love rounded-2xl flex items-center justify-center text-3xl mb-8"><i class="fa-solid fa-hands-holding-child"></i></div>
+                        <h4 class="font-display font-bold text-xl text-slate-900 mb-4">Radical Inclusion</h4>
+                        <p class="text-slate-500 leading-relaxed">We don't just "accept" differences; we celebrate them. Our programs are engineered to ensure every child has a role to play.</p>
+                    </div>
+
+                    <!-- Value 2 -->
+                    <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300">
+                        <div class="w-16 h-16 mx-auto bg-blue-50 text-brand-trust rounded-2xl flex items-center justify-center text-3xl mb-8"><i class="fa-solid fa-shield-heart"></i></div>
+                        <h4 class="font-display font-bold text-xl text-slate-900 mb-4">Absolute Safety</h4>
+                        <p class="text-slate-500 leading-relaxed">Safety goes beyond physical. We create sensory-safe environments where children feel mentally and emotionally secure.</p>
+                    </div>
+
+                    <!-- Value 3 -->
+                    <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300">
+                        <div class="w-16 h-16 mx-auto bg-orange-50 text-brand-fire rounded-2xl flex items-center justify-center text-3xl mb-8"><i class="fa-solid fa-face-laugh-beam"></i></div>
+                        <h4 class="font-display font-bold text-xl text-slate-900 mb-4">Focus on Joy</h4>
+                        <p class="text-slate-500 leading-relaxed">Our primary KPI is a smiling child. Competition takes a back seat to high-fives, laughter, and personal growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FINAL CALL TO ACTION -->
+        <section class="py-24 bg-brand-trust text-white text-center px-4 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+            <div class="relative z-10">
+                <h2 class="text-3xl md:text-5xl font-display font-bold mb-8 leading-tight">Ready to see your child shine?</h2>
+                <p class="text-blue-100 text-lg mb-12 max-w-2xl mx-auto">Register for our next adaptive sports season or reach out to our team with any questions you may have.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="enroll.html" class="bg-white text-brand-trust px-12 py-5 rounded-full font-bold text-xl hover:bg-slate-50 transition-all shadow-xl hover:scale-105 transform">Enroll Now</a>
+                    <a href="mailto:info@lovefiresports.com" class="bg-transparent border-2 border-white text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-white hover:text-brand-trust transition-all">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER (Le même que sur index) -->
+    <footer class="bg-white border-t border-slate-200 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4 text-2xl">
+                        <i class="fa-solid fa-heart text-brand-love"></i><span class="text-slate-300">&</span><i class="fa-solid fa-fire text-brand-fire"></i>
+                        <span class="font-display font-bold text-slate-900">Love & Fire</span>
+                    </div>
+                    <p class="text-slate-500 text-sm max-w-md">Providing safe, structured, and joyful adaptive sports programs for children with special needs in Montgomery County, MD.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="about.html" class="text-brand-trust font-bold">Our Story</a></li>
+                        <li><a href="programs.html" class="hover:text-brand-trust">Programs & Pricing</a></li>
+                        <li><a href="parents.html" class="hover:text-brand-trust">Parent Portal (FAQ)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><i class="fa-solid fa-envelope w-5 text-brand-trust"></i> info@lovefiresports.com</li>
+                        <li><i class="fa-solid fa-phone w-5 text-brand-trust"></i> (240) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-200 pt-8 text-center text-slate-500 text-sm">
+                © 2026 Love & Fire Adaptive Sports. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/12401234567?text=Hi%20Love%20and%20Fire!%20I'd%20love%20to%20know%20more%20about%20your%20story." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a> 
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

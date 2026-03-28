@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parents Portal | Love & Fire Adaptive Sports</title>
+    
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+
+</head>
+<body class="bg-white text-slate-800 flex flex-col min-h-screen">
+
+  <!-- HEADER: Transparent au top, Blanc au scroll (Mise à jour Pro) -->
+<header id="main-nav" class="fixed w-full z-50 transition-all duration-300 nav-transparent py-4 border-b border-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+            
+            <!-- 1. LOGO -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="text-3xl">
+                    <i class="fa-solid fa-heart text-brand-love drop-shadow-md"></i>
+                    <span class="text-white/50 mx-0.5 text-xl logo-sep">&</span>
+                    <i class="fa-solid fa-fire text-brand-fire drop-shadow-md"></i>
+                </div>
+                <span class="logo-text font-display font-extrabold text-2xl tracking-tight text-white transition-colors">
+                    Love <span class="hidden sm:inline">& Fire</span>
+                </span>
+            </a>
+
+            <!-- 2. NAVIGATION DESKTOP (Liens au centre) -->
+            <nav class="hidden lg:flex space-x-8 items-center">
+                <a href="index.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors">Home</a>
+                <a href="about.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors">Our Story</a>
+                <a href="programs.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors">Programs</a>
+                <a href="parents.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors">Parents FAQ</a>
+            </nav>
+
+            <!-- 3. ACTIONS DESKTOP (Boutons à droite) -->
+            <div class="hidden md:flex items-center gap-4 border-l border-white/20 pl-6 actions-desktop">
+                <a href="donate.html" class="text-white hover:text-brand-love font-bold text-sm transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-hand-holding-heart text-brand-love"></i> Donate
+                </a>
+                <a href="enroll.html" class="bg-brand-fire text-white px-6 py-2.5 rounded-xl font-bold hover:bg-orange-600 transition-all shadow-lg hover:scale-105 transform">
+                    Enroll Child
+                </a>
+            </div>
+
+            <!-- 4. BOUTON MENU MOBILE (Hamburger) -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl p-2 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- 5. MENU MOBILE (Caché par défaut) -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white absolute w-full top-full left-0 shadow-2xl border-t border-slate-100">
+        <div class="px-6 py-8 space-y-4 flex flex-col">
+            <a href="index.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Home</a>
+            <a href="about.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Our Story</a>
+            <a href="programs.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Programs</a>
+            <a href="parents.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Parents FAQ</a>
+            
+            <div class="pt-4 space-y-4">
+                <a href="donate.html" class="flex items-center justify-center gap-2 p-4 bg-red-50 text-brand-love font-bold rounded-xl border border-red-100">
+                    <i class="fa-solid fa-hand-holding-heart"></i> Support Our Mission
+                </a>
+                <a href="enroll.html" class="flex items-center justify-center p-4 bg-brand-trust text-white font-bold rounded-xl shadow-lg">
+                    Enroll Your Child
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+    <main class="flex-grow">
+        
+        <!-- 1. DYNAMIC HERO SLIDER (PARENTS EDITION) -->
+        <section class="relative h-[60vh] min-h-[500px] w-full overflow-hidden bg-slate-900 flex items-center justify-center">
+            <!-- Background Slides (Images de parents, coachs et calme) -->
+            <div class="bg-slide absolute inset-0 bg-cover bg-center transition-all duration-1000 opacity-100 scale-100" 
+                 style="background-image: url('https://images.unsplash.com/photo-1536640712-4d4c36ef0e2c?q=80&w=2000&auto=format&fit=crop');"></div>
+            <div class="bg-slide absolute inset-0 bg-cover bg-center transition-all duration-1000 opacity-0 scale-105" 
+                 style="background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2000&auto=format&fit=crop');"></div>
+            <div class="bg-slide absolute inset-0 bg-cover bg-center transition-all duration-1000 opacity-0 scale-105" 
+                 style="background-image: url('https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?q=80&w=2000&auto=format&fit=crop');"></div>
+            
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-slate-900/60"></div>
+
+            <!-- Animated Content -->
+            <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
+                    <i class="fa-solid fa-hand-holding-heart text-brand-love"></i> Dedicated to Families
+                </div>
+                <h1 class="text-5xl md:text-7xl font-display font-extrabold text-white leading-tight mb-6 drop-shadow-xl">
+                    Partnering for Their <br><span id="dynamic-word" class="text-brand-trust fade-text fade-in border-b-4 border-white">Safety</span>.
+                </h1>
+                <p class="text-xl text-slate-200 font-medium max-w-2xl mx-auto drop-shadow-md">
+                    Everything you need to know about our approach, safety protocols, and how we support your child's unique journey.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. THE PROMISE (WHAT TO EXPECT) -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <h2 class="text-brand-trust font-bold tracking-widest uppercase text-sm mb-3">Our Commitment</h2>
+                    <h3 class="text-4xl font-display font-bold text-slate-900 mb-6">What to expect on day one</h3>
+                    <div class="h-1.5 w-24 bg-brand-love mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Step 1 -->
+                    <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 text-center hover:shadow-xl transition-all group">
+                        <div class="w-20 h-20 mx-auto bg-white text-brand-trust rounded-[2rem] flex items-center justify-center text-3xl mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                            <i class="fa-regular fa-comments"></i>
+                        </div>
+                        <h4 class="text-2xl font-display font-bold text-slate-900 mb-4">Pre-Session Chat</h4>
+                        <p class="text-slate-600 leading-relaxed">Before the first session, our lead coach reviews your child's sensory profile and communication style to ensure a welcoming start.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 text-center hover:shadow-xl transition-all group">
+                        <div class="w-20 h-20 mx-auto bg-white text-brand-fire rounded-[2rem] flex items-center justify-center text-3xl mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-volume-xmark"></i>
+                        </div>
+                        <h4 class="text-2xl font-display font-bold text-slate-900 mb-4">No-Pressure Zones</h4>
+                        <p class="text-slate-600 leading-relaxed">We use visual cues instead of loud whistles. Every class has a designated "quiet zone" for children who need a moment to decompress.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 text-center hover:shadow-xl transition-all group">
+                        <div class="w-20 h-20 mx-auto bg-white text-brand-love rounded-[2rem] flex items-center justify-center text-3xl mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <h4 class="text-2xl font-display font-bold text-slate-900 mb-4">Parents Welcome</h4>
+                        <p class="text-slate-600 leading-relaxed">You are part of the team. Stay, watch, or participate—we value your presence and insight into your child's comfort.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. FAQ SECTION -->
+        <section class="py-24 bg-brand-light border-t border-slate-100">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-display font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+                    <p class="text-lg text-slate-600">Find clarity on our certifications, sensory policies, and more.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white border border-slate-200 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-all">
+                        <button class="faq-btn w-full px-8 py-7 text-left flex justify-between items-center focus:outline-none group">
+                            <span class="font-display font-bold text-xl text-slate-800 group-hover:text-brand-trust transition-colors">Are your coaches certified?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300 text-brand-trust bg-blue-50 p-2 rounded-full"></i>
+                        </button>
+                        <div class="hidden px-8 pb-8 text-lg text-slate-600 leading-relaxed border-t border-slate-50 pt-6">
+                            Yes. Absolute safety is our priority. All our coaches undergo rigorous background checks, are CPR and First-Aid certified, and receive specialized training in working with neurodivergent children.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white border border-slate-200 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-all">
+                        <button class="faq-btn w-full px-8 py-7 text-left flex justify-between items-center focus:outline-none group">
+                            <span class="font-display font-bold text-xl text-slate-800 group-hover:text-brand-trust transition-colors">What if my child has a sensory meltdown?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300 text-brand-trust bg-blue-50 p-2 rounded-full"></i>
+                        </button>
+                        <div class="hidden px-8 pb-8 text-lg text-slate-600 leading-relaxed border-t border-slate-50 pt-6">
+                            We understand that meltdowns are part of the process. Our coaches are trained to respond with patience and empathy, guiding children to a "quiet zone" to decompress without any pressure or judgment.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white border border-slate-200 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-all">
+                        <button class="faq-btn w-full px-8 py-7 text-left flex justify-between items-center focus:outline-none group">
+                            <span class="font-display font-bold text-xl text-slate-800 group-hover:text-brand-trust transition-colors">What is the coach-to-child ratio?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300 text-brand-trust bg-blue-50 p-2 rounded-full"></i>
+                        </button>
+                        <div class="hidden px-8 pb-8 text-lg text-slate-600 leading-relaxed border-t border-slate-50 pt-6">
+                            To ensure personalized attention and safety, we maintain a strict 1:4 ratio in our group classes. For children requiring more support, we also offer private 1-on-1 sessions.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FINAL CTA -->
+        <section class="py-24 bg-white text-center px-4">
+            <div class="max-w-3xl mx-auto bg-slate-900 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-trust rounded-full filter blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
+                <div class="relative z-10">
+                    <h3 class="text-3xl md:text-5xl font-display font-bold mb-6 tracking-tight">Still have questions?</h3>
+                    <p class="text-slate-300 text-lg mb-12">We believe in open doors and open hearts. Reach out to our founder directly.</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://wa.me/12401234567" target="_blank" class="inline-flex items-center justify-center gap-3 bg-[#25d366] text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg shadow-green-900/20">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i> WhatsApp Us
+                        </a>
+                        <a href="mailto:info@lovefiresports.com" class="inline-flex items-center justify-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-slate-100 transition-colors shadow-lg">
+                            <i class="fa-regular fa-envelope text-xl"></i> Send an Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-200 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center justify-center md:justify-start gap-2 mb-4 text-2xl">
+                        <i class="fa-solid fa-heart text-brand-love"></i><span class="text-slate-300">&</span><i class="fa-solid fa-fire text-brand-fire"></i>
+                        <span class="font-display font-bold text-slate-900">Love & Fire</span>
+                    </div>
+                    <p class="text-slate-500 text-sm max-w-md mx-auto md:mx-0">Providing safe, structured, and joyful adaptive sports programs for children with special needs in Montgomery County, MD.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-widest">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-slate-600 font-semibold">
+                        <li><a href="about.html" class="hover:text-brand-trust">Our Story</a></li>
+                        <li><a href="programs.html" class="hover:text-brand-trust">Programs & Pricing</a></li>
+                        <li><a href="enroll.html" class="hover:text-brand-trust">Enroll Child</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-widest">Connect</h4>
+                    <ul class="space-y-2 text-sm text-slate-600 font-semibold">
+                        <li>info@lovefiresports.com</li>
+                        <li>(240) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-[10px] font-bold uppercase">
+                <p>© 2026 Love & Fire Adaptive Sports.</p>
+                <p>Designed with Love in Maryland</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

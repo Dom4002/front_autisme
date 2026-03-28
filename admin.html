@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Love & Fire</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body class="bg-slate-100 min-h-screen">
+
+    <!-- Navbar Admin simple -->
+    <nav class="bg-white shadow-sm p-4 flex justify-between items-center">
+        <h1 class="font-bold text-xl">Love & Fire Admin</h1>
+        <button id="logout-btn" class="text-sm bg-red-50 text-brand-love px-4 py-2 rounded-lg font-bold">Logout</button>
+    </nav>
+
+    <main class="p-8">
+        <h2 class="text-2xl font-bold mb-6">Inscriptions Reçues</h2>
+        
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+            <table class="w-full text-left">
+                <thead class="bg-slate-50 text-xs uppercase text-slate-500 font-bold">
+                    <tr>
+                        <th class="p-6">Parent</th>
+                        <th class="p-6">Enfant</th>
+                        <th class="p-6">Programme</th>
+                        <th class="p-6">Date</th>
+                        <th class="p-6">Statut</th>
+                    </tr>
+                </thead>
+                <tbody id="enrollment-list" class="divide-y divide-slate-100">
+                    <!-- Les données viendront ici via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script type="module" src="/src/js/admin.js"></script>
+</body>
+</html>

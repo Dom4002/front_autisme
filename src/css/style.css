@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700;800&display=swap');
+
+@theme {
+  --color-brand-love: #e11d48;
+  --color-brand-fire: #ea580c;
+  --color-brand-trust: #0284c7;
+  --color-brand-light: #f8fafc;
+  
+  --font-sans: "Nunito", sans-serif;
+  --font-display: "Quicksand", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-slate-800 bg-brand-light;
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, .font-display {
+    @apply font-display;
+  }
+}
+
+/* Animations et composants */
+.fade-text { @apply transition-all duration-500 inline-block; }
+.fade-out { @apply opacity-0 -translate-y-2; }
+.fade-in { @apply opacity-100 translate-y-0; }
+
+.nav-scrolled {
+  @apply bg-white/95 backdrop-blur-md shadow-lg py-2 border-b border-slate-100;
+}
+.nav-transparent {
+  @apply bg-transparent py-4 border-transparent;
+}
+
+.whatsapp-float {
+  @apply fixed bottom-8 right-8 w-14 h-14 bg-[#25d366] text-white rounded-full 
+         flex items-center justify-center text-3xl shadow-xl z-50 
+         transition-all duration-300 hover:scale-110 hover:-translate-y-1;
+  animation: pulse-wa 2s infinite;
+}
+
+@keyframes pulse-wa {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}

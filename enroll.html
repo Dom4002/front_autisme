@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment Application | Love & Fire</title>
+    
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <link rel="stylesheet" href="/src/css/style.css">
+    
+ 
+</head>
+<body class="bg-brand-light text-slate-800 flex flex-col min-h-screen selection:bg-brand-trust selection:text-white">
+
+    <!-- HEADER MINIMALISTE (Focus Mode) -->
+    <header class="bg-white border-b border-slate-200 py-4 px-6 flex justify-between items-center sticky top-0 z-50 shadow-sm">
+        <a href="index.html" class="flex items-center gap-2 text-slate-500 font-bold hover:text-brand-trust transition-colors">
+            <i class="fa-solid fa-arrow-left"></i> <span class="hidden sm:inline">Back to Home</span>
+        </a>
+        <div class="flex items-center gap-2 text-slate-900 font-display font-extrabold text-2xl">
+            <i class="fa-solid fa-heart text-brand-love"></i><span class="text-slate-300">&</span><i class="fa-solid fa-fire text-brand-fire"></i>
+        </div>
+        <div class="text-sm font-bold text-brand-trust flex items-center gap-2">
+            <i class="fa-solid fa-phone"></i> <span class="hidden sm:inline">(240) 123-4567</span>
+        </div>
+    </header>
+
+    <main class="flex-grow py-12 px-4 sm:px-6">
+        <div class="max-w-3xl mx-auto">
+            
+            <!-- EN-TÊTE DU FORMULAIRE -->
+            <div class="text-center mb-10 animate-fade-in-up">
+                <h1 class="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-4">Join the Family</h1>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Tell us a little about your child so we can ensure the perfect fit. <br>
+                    <strong class="text-brand-trust">No payment is required today.</strong> We will contact you to finalize enrollment.
+                </p>
+            </div>
+
+            <!-- FORMULAIRE -->
+            <div class="bg-white rounded-[2.5rem] shadow-xl border border-slate-100 overflow-hidden animate-fade-in-up" style="animation-delay: 0.2s;">
+                <form class="p-8 md:p-12 needs-validation" novalidate>
+                    
+                    <!-- SECTION 1: PARENT INFO -->
+                    <div class="mb-10">
+                        <h3 class="text-sm font-bold text-brand-trust uppercase tracking-widest border-b border-slate-100 pb-3 mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-user-shield"></i> 1. Parent / Guardian Info
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide ">Your Full Name *</label>
+                                <input id="parentName" type="text" required class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-brand-trust focus:bg-white transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide">Phone Number *</label>
+                                <input type="tel" id="phone" required class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-brand-trust focus:bg-white transition-all">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide">Email Address *</label>
+                                <input type="email" id="email" required class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-brand-trust focus:bg-white transition-all">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: CHILD INFO -->
+                    <div class="mb-10">
+                        <h3 class="text-sm font-bold text-brand-love uppercase tracking-widest border-b border-slate-100 pb-3 mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-child-reaching"></i> 2. Child's Profile
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide">Child's Name *</label>
+                                <input type="text" id="childName" required class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-brand-love focus:bg-white transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide">Age (3-15) *</label>
+                                <input type="number" id="childAge" min="3" max="15" required class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-brand-love focus:bg-white transition-all">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide">Diagnosis / Neurotype (Optional)</label>
+                                <input type="text" id="diagnosis" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-brand-love focus:bg-white transition-all" placeholder="e.g. Autism Spectrum, ADHD, Non-verbal...">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide">Sensory Triggers & Preferences *</label>
+                                <textarea required rows="3" id="sensoryNeeds" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-brand-love focus:bg-white transition-all resize-none" placeholder="What calms them down? What overwhelms them? (e.g. sensitive to loud noises, loves visual schedules)"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: PROGRAM SELECTION -->
+                    <div class="mb-10">
+                        <h3 class="text-sm font-bold text-brand-fire uppercase tracking-widest border-b border-slate-100 pb-3 mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-star"></i> 3. Program Interest
+                        </h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Option 1 -->
+                            <label class="cursor-pointer group">
+                                <input type="radio" name="program" value="soccer_group" required class="peer sr-only">
+                                <div class="p-5 border-2 border-slate-200 rounded-2xl peer-checked:border-brand-fire peer-checked:bg-orange-50 transition-all hover:bg-slate-50 relative">
+                                    <div class="absolute top-4 right-4 text-slate-300 peer-checked:text-brand-fire">
+                                        <i class="fa-solid fa-circle-check text-xl opacity-0 peer-checked:opacity-100 transition-opacity"></i>
+                                    </div>
+                                    <i class="fa-regular fa-futbol text-2xl text-slate-400 group-hover:text-brand-fire peer-checked:text-brand-fire mb-3 block"></i>
+                                    <div class="font-bold text-slate-800">Soccer (Group)</div>
+                                    <div class="text-sm text-slate-500 mt-1">6 Sessions • $180</div>
+                                </div>
+                            </label>
+
+                            <!-- Option 2 -->
+                            <label class="cursor-pointer group">
+                                <input type="radio" name="program" value="basketball_group" class="peer sr-only">
+                                <div class="p-5 border-2 border-slate-200 rounded-2xl peer-checked:border-brand-fire peer-checked:bg-orange-50 transition-all hover:bg-slate-50 relative">
+                                    <div class="absolute top-4 right-4 text-slate-300 peer-checked:text-brand-fire">
+                                        <i class="fa-solid fa-circle-check text-xl opacity-0 peer-checked:opacity-100 transition-opacity"></i>
+                                    </div>
+                                    <i class="fa-solid fa-basketball text-2xl text-slate-400 group-hover:text-brand-fire peer-checked:text-brand-fire mb-3 block"></i>
+                                    <div class="font-bold text-slate-800">Basketball (Group)</div>
+                                    <div class="text-sm text-slate-500 mt-1">6 Sessions • $180</div>
+                                </div>
+                            </label>
+
+                            <!-- Option 3 -->
+                            <label class="cursor-pointer group">
+                                <input type="radio" name="program" value="private_1on1" class="peer sr-only">
+                                <div class="p-5 border-2 border-slate-200 rounded-2xl peer-checked:border-brand-trust peer-checked:bg-blue-50 transition-all hover:bg-slate-50 relative">
+                                    <div class="absolute top-4 right-4 text-slate-300 peer-checked:text-brand-trust">
+                                        <i class="fa-solid fa-circle-check text-xl opacity-0 peer-checked:opacity-100 transition-opacity"></i>
+                                    </div>
+                                    <i class="fa-solid fa-user text-2xl text-slate-400 group-hover:text-brand-trust peer-checked:text-brand-trust mb-3 block"></i>
+                                    <div class="font-bold text-slate-800">Private 1-on-1</div>
+                                    <div class="text-sm text-slate-500 mt-1">6 Sessions • $360</div>
+                                </div>
+                            </label>
+
+                            <!-- Option 4 -->
+                            <label class="cursor-pointer group">
+                                <input type="radio" name="program" value="art_music" class="peer sr-only">
+                                <div class="p-5 border-2 border-slate-200 rounded-2xl peer-checked:border-brand-love peer-checked:bg-red-50 transition-all hover:bg-slate-50 relative">
+                                    <div class="absolute top-4 right-4 text-slate-300 peer-checked:text-brand-love">
+                                        <i class="fa-solid fa-circle-check text-xl opacity-0 peer-checked:opacity-100 transition-opacity"></i>
+                                    </div>
+                                    <i class="fa-solid fa-palette text-2xl text-slate-400 group-hover:text-brand-love peer-checked:text-brand-love mb-3 block"></i>
+                                    <div class="font-bold text-slate-800">Art & Music</div>
+                                    <div class="text-sm text-slate-500 mt-1">Creative Sessions</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- SUBMIT BUTTON -->
+                    <div class="pt-6 border-t border-slate-100">
+                        <button type="submit" class="w-full bg-slate-900 text-white py-5 rounded-2xl font-display font-bold text-xl hover:bg-brand-trust transition-all shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1">
+                            Submit Application
+                        </button>
+                        <div class="mt-6 flex items-center justify-center gap-2 text-xs text-slate-400 font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-lock text-brand-trust"></i> HIPAA Compliant & Secure
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Assure-toi que main.js est bien lié pour la validation SweetAlert -->
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

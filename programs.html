@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs | Love & Fire Adaptive Sports</title>
+    
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+ </head>
+<body class="bg-white text-slate-800 flex flex-col min-h-screen">
+
+    <!-- HEADER: Transparent au top, Blanc au scroll (Mise à jour Pro) -->
+<header id="main-nav" class="fixed w-full z-50 transition-all duration-300 nav-transparent py-4 border-b border-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+            
+            <!-- 1. LOGO -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="text-3xl">
+                    <i class="fa-solid fa-heart text-brand-love drop-shadow-md"></i>
+                    <span class="text-white/50 mx-0.5 text-xl logo-sep">&</span>
+                    <i class="fa-solid fa-fire text-brand-fire drop-shadow-md"></i>
+                </div>
+                <span class="logo-text font-display font-extrabold text-2xl tracking-tight text-white transition-colors">
+                    Love <span class="hidden sm:inline">& Fire</span>
+                </span>
+            </a>
+
+            <!-- 2. NAVIGATION DESKTOP (Liens au centre) -->
+            <nav class="hidden lg:flex space-x-8 items-center">
+                <a href="index.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors">Home</a>
+                <a href="about.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors">Our Story</a>
+                <a href="programs.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors">Programs</a>
+                <a href="parents.html" class="nav-link text-white font-bold hover:text-brand-fire transition-colors">Parents FAQ</a>
+            </nav>
+
+            <!-- 3. ACTIONS DESKTOP (Boutons à droite) -->
+            <div class="hidden md:flex items-center gap-4 border-l border-white/20 pl-6 actions-desktop">
+                <a href="donate.html" class="text-white hover:text-brand-love font-bold text-sm transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-hand-holding-heart text-brand-love"></i> Donate
+                </a>
+                <a href="enroll.html" class="bg-brand-fire text-white px-6 py-2.5 rounded-xl font-bold hover:bg-orange-600 transition-all shadow-lg hover:scale-105 transform">
+                    Enroll Child
+                </a>
+            </div>
+
+            <!-- 4. BOUTON MENU MOBILE (Hamburger) -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl p-2 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- 5. MENU MOBILE (Caché par défaut) -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white absolute w-full top-full left-0 shadow-2xl border-t border-slate-100">
+        <div class="px-6 py-8 space-y-4 flex flex-col">
+            <a href="index.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Home</a>
+            <a href="about.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Our Story</a>
+            <a href="programs.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Programs</a>
+            <a href="parents.html" class="text-slate-800 font-bold text-lg border-b border-slate-50 pb-2">Parents FAQ</a>
+            
+            <div class="pt-4 space-y-4">
+                <a href="donate.html" class="flex items-center justify-center gap-2 p-4 bg-red-50 text-brand-love font-bold rounded-xl border border-red-100">
+                    <i class="fa-solid fa-hand-holding-heart"></i> Support Our Mission
+                </a>
+                <a href="enroll.html" class="flex items-center justify-center p-4 bg-brand-trust text-white font-bold rounded-xl shadow-lg">
+                    Enroll Your Child
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main class="flex-grow">
+        
+        <!-- 1. DYNAMIC HERO SLIDER -->
+        <section class="relative h-[60vh] min-h-[500px] w-full overflow-hidden bg-slate-900 flex items-center justify-center">
+            <!-- Background Slides -->
+            <div class="bg-slide absolute inset-0 bg-cover bg-center transition-all duration-1000 opacity-100 scale-100" 
+                 style="background-image: url('https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=2000&auto=format&fit=crop');"></div>
+            <div class="bg-slide absolute inset-0 bg-cover bg-center transition-all duration-1000 opacity-0 scale-105" 
+                 style="background-image: url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2000&auto=format&fit=crop');"></div>
+            <div class="bg-slide absolute inset-0 bg-cover bg-center transition-all duration-1000 opacity-0 scale-105" 
+                 style="background-image: url('https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=2000&auto=format&fit=crop');"></div>
+            
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-slate-900/60"></div>
+
+            <!-- Animated Content -->
+            <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 animate-bounce">
+                    Programs & Pricing
+                </div>
+                <h1 class="text-5xl md:text-7xl font-display font-extrabold text-white leading-tight mb-6 drop-shadow-xl">
+                    Fueling Their <br><span id="dynamic-word" class="text-brand-fire fade-text fade-in border-b-4 border-brand-love">Passion</span>.
+                </h1>
+                <p class="text-xl text-slate-200 font-medium max-w-2xl mx-auto drop-shadow-md">
+                    Explore our specialized curriculum designed to adapt to your child's unique needs through sports, arts, and music.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. ADAPTIVE SPORTS SECTION (Z-PATTERN) -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-24">
+                    <h2 class="text-brand-trust font-bold tracking-widest uppercase text-sm mb-3 italic">Active Learning</h2>
+                    <h3 class="text-4xl md:text-5xl font-display font-bold text-slate-900">Adaptive Sports</h3>
+                    <div class="h-1.5 w-24 bg-brand-fire mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- SOCCER & BASKETBALL INTRO -->
+                <div class="bg-slate-50 rounded-[3rem] p-8 md:p-16 mb-20 border border-slate-100 flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <h4 class="text-3xl font-display font-bold text-slate-800 mb-6 uppercase tracking-tight">Exciting Soccer & Basketball</h4>
+                        <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                            Our experienced coaches focus on developing skills, teamwork, and confidence in a supportive environment. Whether your child is new to sports or looking to enhance their abilities, our inclusive approach ensures every child can thrive.
+                        </p>
+                        <p class="text-brand-trust font-bold text-xl uppercase italic tracking-tighter">Come dribble, pass, and score with us!</p>
+                    </div>
+                    <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                        <!-- Soccer Card -->
+                        <div class="bg-white p-6 rounded-3xl shadow-sm border border-blue-50 hover:shadow-xl transition-all">
+                            <div class="w-12 h-12 bg-red-50 text-brand-love rounded-2xl flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-futbol"></i></div>
+                            <h5 class="font-bold text-slate-800 mb-2">Group Soccer</h5>
+                            <p class="text-2xl font-black text-brand-trust mb-4">$180 <span class="text-[10px] text-slate-400">/ 6 SESS.</span></p>
+                            <a href="enroll.html" class="text-xs font-bold uppercase text-brand-fire hover:underline">Book Now <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        </div>
+                        <!-- Basketball Card -->
+                        <div class="bg-white p-6 rounded-3xl shadow-sm border border-orange-50 hover:shadow-xl transition-all">
+                            <div class="w-12 h-12 bg-orange-50 text-brand-fire rounded-2xl flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-basketball"></i></div>
+                            <h5 class="font-bold text-slate-800 mb-2">Group Basketball</h5>
+                            <p class="text-2xl font-black text-brand-trust mb-4">$180 <span class="text-[10px] text-slate-400">/ 6 SESS.</span></p>
+                            <a href="enroll.html" class="text-xs font-bold uppercase text-brand-fire hover:underline">Book Now <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CREATIVE ARTS & MUSIC (PREMIUM DARK) -->
+        <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-brand-love rounded-full filter blur-[120px] opacity-10 -translate-x-1/2"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="text-brand-fire font-bold tracking-widest uppercase text-sm mb-4 block">Self-Expression</span>
+                        <h3 class="text-4xl md:text-6xl font-display font-bold mb-8 leading-tight">Adaptive <br><span class="gradient-text">Art & Music</span></h3>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                            Join our vibrant Art & Music classes and unleash your creativity! Whether you're a beginner or an experienced artist, our community and expert instructors will help you explore your passion. Experience the joy of self-expression, make new friends, and discover hidden talents.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-4 rounded-2xl">
+                                <i class="fa-solid fa-palette text-brand-love text-2xl"></i>
+                                <span class="font-bold">Creative Arts</span>
+                            </div>
+                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-4 rounded-2xl">
+                                <i class="fa-solid fa-music text-yellow-500 text-2xl"></i>
+                                <span class="font-bold">Music Journey</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1000&auto=format&fit=crop" 
+                             alt="Child painting" class="rounded-[3rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute -bottom-6 -right-6 bg-white p-8 rounded-[2rem] shadow-2xl text-slate-900 max-w-[280px]">
+                            <p class="text-sm italic font-medium leading-relaxed">"Watch as your little ones grow not only as musicians but also as individuals!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FINAL CALL TO ACTION -->
+        <section class="py-24 bg-brand-light text-center px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-slate-900 mb-8 leading-tight">Enrollment for our <span class="text-brand-trust">Spring Session</span> is now open.</h2>
+                <p class="text-slate-500 text-lg mb-10">Limited spaces available per group to ensure a 1:4 coach ratio.</p>
+                <a href="enroll.html" class="inline-block bg-slate-900 text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-brand-trust transition-all shadow-xl hover:scale-105 transform">
+                    Apply to Join the Team
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER (À copier) -->
+    <footer class="bg-white border-t border-slate-100 pt-20 pb-10">
+        <!-- Contenu du footer identique à index.html -->
+    </footer>
+
+    <script type="module" src="/src/js/main.js"></script>
+
+</body>
+</html>
+
+
+

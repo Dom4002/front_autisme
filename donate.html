@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Love & Fire | Professional Donation Portal</title>
+    
+    <!-- Liens vers tes fichiers compilés par Vite -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AYdbiOBrS1LfLCWhleavJP0U94wSEARnYj_HO-VGRCqDeMIh2HDDupr6ll4qfiZBXxxjYg8ioIkKEyqb&currency=USD"></script>
+</head>
+<body class="bg-brand-light text-slate-900 font-sans flex flex-col min-h-screen">
+
+    <!-- HEADER MINIMALISTE -->
+    <header class="bg-white border-b border-slate-200 py-4 px-6 flex justify-between items-center sticky top-0 z-50 shadow-sm">
+        <a href="index.html" class="flex items-center gap-2 text-slate-500 font-bold hover:text-brand-trust transition-colors">
+            <i class="fa-solid fa-arrow-left"></i> <span class="hidden sm:inline">Back to Home</span>
+        </a>
+        <div class="flex items-center gap-2 text-slate-900 font-display font-extrabold text-2xl">
+            <i class="fa-solid fa-heart text-brand-love"></i><span class="text-slate-300">&</span><i class="fa-solid fa-fire text-brand-fire"></i>
+        </div>
+        <div class="text-sm font-bold text-slate-400 flex items-center gap-2 uppercase tracking-widest">
+            <i class="fa-solid fa-lock text-green-500"></i> Secure
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+            
+            <!-- Info Section -->
+            <div>
+                <h1 class="text-4xl font-extrabold mb-6 font-display">Empower Every Child</h1>
+                <p class="text-slate-600 mb-8 leading-relaxed">Your contribution provides specialized equipment, adaptive sports coaching, and ensures no family is left behind due to financial constraints.</p>
+                <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
+                    <p class="text-sm text-blue-800 italic">"Love & Fire is a 501(c)(3) organization. Your donations are tax-deductible to the extent allowed by law."</p>
+                </div>
+            </div>
+
+            <!-- Payment Section -->
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
+                <h3 class="font-bold mb-6 font-display">Select or Enter Amount</h3>
+                
+                <!-- Amount Grid -->
+                <div class="grid grid-cols-3 gap-3 mb-6">
+                    <button class="amount-btn border-2 border-slate-200 py-3 rounded-xl font-bold transition-all duration-200 hover:border-brand-trust" onclick="selectAmount(25, this)">$25</button>
+                    <button class="amount-btn border-2 border-brand-trust bg-blue-50 text-brand-trust py-3 rounded-xl font-bold transition-all shadow-sm" onclick="selectAmount(100, this)">$100</button>
+                    <button class="amount-btn border-2 border-slate-200 py-3 rounded-xl font-bold transition-all duration-200 hover:border-brand-trust" onclick="selectAmount(250, this)">$250</button>
+                </div>
+
+                <!-- Custom Amount -->
+                <div class="mb-8">
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Or enter custom amount</label>
+                    <input type="number" id="customAmount" placeholder="0.00" class="w-full p-4 border-2 border-slate-200 rounded-xl focus:border-brand-trust outline-none font-bold text-xl" oninput="updateCustomAmount(this.value)">
+                </div>
+
+                <!-- PayPal Container -->
+                <div id="paypal-button-container"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let selectedAmount = 100;
+
+        // Mise à jour de l'affichage des boutons
+        function selectAmount(val, el) {
+            selectedAmount = val;
+            document.querySelectorAll('.amount-btn').forEach(btn => {
+                btn.classList.remove('border-brand-trust', 'bg-blue-50', 'text-brand-trust', 'shadow-sm');
+                btn.classList.add('border-slate-200');
+            });
+            el.classList.add('border-brand-trust', 'bg-blue-50', 'text-brand-trust', 'shadow-sm');
+            el.classList.remove('border-slate-200');
+            document.getElementById('customAmount').value = '';
+        }
+
+        function updateCustomAmount(val) {
+            selectedAmount = parseFloat(val) || 0;
+            document.querySelectorAll('.amount-btn').forEach(btn => {
+                btn.classList.remove('border-brand-trust', 'bg-blue-50', 'text-brand-trust', 'shadow-sm');
+                btn.classList.add('border-slate-200');
+            });
+        }
+
+        // Initialisation PayPal
+        paypal.Buttons({
+            createOrder: (data, actions) => {
+                return actions.order.create({
+                    purchase_units: [{ amount: { value: selectedAmount.toString() } }]
+                });
+            },
+            onApprove: (data, actions) => {
+                return actions.order.capture().then(details => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Thank you!',
+                        text: 'Your donation of $' + selectedAmount + ' has been received.'
+                    });
+                });
+            }
+        }).render('#paypal-button-container');
+    </script>
+</body>
+</html>
